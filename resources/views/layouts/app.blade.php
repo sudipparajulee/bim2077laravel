@@ -22,7 +22,7 @@
                 <div class="mt-10">
                     <a href="" class="p-2 border-l-4 border-blue-600 m-2 text-lg hover:bg-gray-300 block">Dashboard</a>
 
-                    <a href="" class="p-2 border-l-4 border-blue-600 m-2 text-lg hover:bg-gray-300 block">Category</a>
+                    <a href="{{route('category.index')}}" class="p-2 border-l-4 border-blue-600 m-2 text-lg hover:bg-gray-300 block">Category</a>
 
 
                     <a href="" class="p-2 border-l-4 border-blue-600 m-2 text-lg hover:bg-gray-300 block">Products</a>
