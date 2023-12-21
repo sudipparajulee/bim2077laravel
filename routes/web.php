@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/category',[CategoryController::class, 'index'])->name('category.index');
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+
+Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,4 +33,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
