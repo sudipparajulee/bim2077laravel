@@ -23,6 +23,8 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 
 Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
 
+Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
