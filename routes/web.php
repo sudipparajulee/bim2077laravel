@@ -19,13 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/category', [CategoryController::class, 'index'])->middleware('auth')->name('category.index');
+Route::middleware('auth')->group(function(){
+    //Category
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/{id}/edit', [CategoryController::class,'edit'])->name('category.edit');
+    Route::post('/category/{id}/update', [CategoryController::class,'update'])->name('category.update');
+    Route::get('/category/{id}/delete', [CategoryController::class,'delete'])->name('category.delete');
 
-Route::get('/category/create', [CategoryController::class, 'create'])->middleware('auth')->name('category.create');
-
-Route::post('/category/store', [CategoryController::class, 'store'])->middleware('auth')->name('category.store');
-
-Route::get('/category/{id}/edit', [CategoryController::class,'edit'])->middleware('auth')->name('category.edit');
+    //Product
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
