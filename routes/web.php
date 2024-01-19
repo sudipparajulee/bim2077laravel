@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,12 @@ Route::middleware('auth')->group(function(){
     Route::get('/category/{id}/delete', [CategoryController::class,'delete'])->name('category.delete');
 
     //Product
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/{id}/edit', [ProductController::class,'edit'])->name('product.edit');
+    Route::post('/product/{id}/update', [ProductController::class,'update'])->name('product.update');
+    Route::get('/product/{id}/delete', [ProductController::class,'delete'])->name('product.delete');
 });
 
 Route::get('/dashboard', function () {
