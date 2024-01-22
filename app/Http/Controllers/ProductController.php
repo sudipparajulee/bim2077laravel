@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,12 +16,24 @@ class ProductController extends Controller
 
     public function create()
     {
-
+        $categories = Category::orderBy('priority')->get();
+        return view('product.create',compact('categories'));
     }
 
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'category_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'discounted_price' => 'nullable',
+            'stock' => 'required',
+            'photopath' => 'required',
+        ]);
 
+        Product::create($data);
+        return redirect(route('product.index'));
     }
 
     public function edit($id)
