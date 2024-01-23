@@ -32,6 +32,14 @@ class ProductController extends Controller
             'photopath' => 'required',
         ]);
 
+        if($request->hasFile('photopath')){
+            $file = $request->file('photopath');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/products/', $filename);
+            $data['photopath'] = $filename;
+        }
+
         Product::create($data);
         return redirect(route('product.index'));
     }

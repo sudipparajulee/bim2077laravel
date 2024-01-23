@@ -27,7 +27,7 @@
             <td class="border border-gray-200 p-2">{{$product->price}}</td>
             <td class="border border-gray-200 p-2">{{$product->category_id}}</td>
             <td class="border border-gray-200 p-2">{{$product->discounted_price}}</td>
-            <td class="border border-gray-200 p-2">{{$product->photopath}}</td>
+            <td class="border border-gray-200 p-2"><img src="{{asset('images/products/'.$product->photopath)}}" class="w-32" alt=""></td>
             <td class="border border-gray-200 p-2">
                 <a href="{{route('product.edit',$product->id)}}" class="bg-blue-600 text-white px-2 py-1 rounded mx-1">Edit</a>
                 <a onclick="return confirm('Are you sure to delete?')" href="{{route('product.delete',$product->id)}}" class="bg-red-600 text-white px-2 py-1 rounded mx-1">Delete</a>
