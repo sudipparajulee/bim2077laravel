@@ -25,7 +25,7 @@
             <td class="border border-gray-200 p-2">{{$product->name}}</td>
             <td class="border border-gray-200 p-2">{{$product->description}}</td>
             <td class="border border-gray-200 p-2">{{$product->price}}</td>
-            <td class="border border-gray-200 p-2">{{$product->category_id}}</td>
+            <td class="border border-gray-200 p-2">{{$product->category->categoryname}}</td>
             <td class="border border-gray-200 p-2">{{$product->discounted_price}}</td>
             <td class="border border-gray-200 p-2"><img src="{{asset('images/products/'.$product->photopath)}}" class="w-32" alt=""></td>
             <td class="border border-gray-200 p-2">

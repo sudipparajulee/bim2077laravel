@@ -37,7 +37,7 @@
 
         <div class="flex justify-center">
             <input type="submit" class="bg-blue-600 text-white px-4 mx-2 py-2 rounded">
-            <a href="{{ route('category.index') }}" class="bg-red-600 text-white px-10 mx-2 py-2 rounded">Exit</a>
+            <a href="{{ route('product.index') }}" class="bg-red-600 text-white px-10 mx-2 py-2 rounded">Exit</a>
         </div>
     </form>
 @endsection
