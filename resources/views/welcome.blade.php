@@ -49,7 +49,18 @@
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="{{asset('assets/images/user.svg')}}"> @auth{{auth()->user()->name}}@endauth </a></li>
+						<li>
+                            @auth
+                            <a class="nav-link" href="/userprofile"><img src="{{asset('assets/images/user.svg')}}">
+                                Welcome {{auth()->user()->name}}
+                                </a>
+                            @else
+
+                            <a class="nav-link" href="/login"><img src="{{asset('assets/images/user.svg')}}">
+                        Login
+                        </a>
+                            @endauth
+                    </li>
 						<li><a class="nav-link" href="cart.html"><img src="{{asset('assets/images/cart.svg')}}"></a></li>
 					</ul>
 				</div>
