@@ -51,7 +51,7 @@
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li>
                             @auth
-                            <a class="nav-link" href="/userprofile"><img src="{{asset('assets/images/user.svg')}}">
+                            <a class="nav-link" href="{{route('userprofile')}}"><img src="{{asset('assets/images/user.svg')}}">
                                 Welcome {{auth()->user()->name}}
                                 </a>
                             @else
