@@ -62,6 +62,18 @@
                             @endauth
                     </li>
 						<li><a class="nav-link" href="cart.html"><img src="{{asset('assets/images/cart.svg')}}"></a></li>
+
+                        {{-- //logout --}}
+                        @auth
+                        <li>
+                            <form action="{{route('logout')}}" method="post">
+                                @csrf
+                                <button type="submit"  href="/logout">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+                        @endauth
 					</ul>
 				</div>
 			</div>
